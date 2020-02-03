@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DAM_Practica1.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" 
+                x:Key="FontAwesomeSolid"
+                        Android="fa-solid-900.ttf#Regular"
+                        iOS="FontAwesome5Free-Solid"
+                      />
+            <OnPlatform x:TypeArguments="x:String" 
+                x:Key="FontAwesomeRegular"
+                        Android="fa-regular-400.ttf#FontAwesome5Free"
+                        iOS="FontAwesome5Free-Regular"
+                      />
+            <OnPlatform x:TypeArguments="x:String" 
+                x:Key="FontAwesomeBrands"
+                        Android="fa-brands-400.ttf#Regular"
+                        iOS="FontAwesome5Brands-Regular"
+                      />
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
