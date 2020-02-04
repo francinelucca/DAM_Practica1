@@ -88,7 +88,14 @@
                                PlaceholderColor="LightGray"
                                Grid.Column="0" 
                                Grid.ColumnSpan="2"
-                               FontAttributes="Bold"/>
+                               FontAttributes="Bold">
+                                <Entry.Margin >
+                                    <OnPlatform x:TypeArguments="Thickness" 
+                                            Android="0,0,0,0"
+                                            iOS="0,20,0,0"
+                                            />
+                                </Entry.Margin>
+                            </Entry>
                             <Label x:Name="Visibility"
                                Text="{x:Static utils:Icon.Visible}" 
                                FontFamily="{StaticResource FontAwesomeSolid}" 
