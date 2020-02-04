@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DAM_Practica1.LoginPage"
              xmlns:utils="clr-namespace:DAM_Practica1.Utils"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
@@ -66,19 +68,20 @@
                                     />
                         </Frame>
                     </Frame>
-                    <Entry Placeholder="Username or email address"
+                    <StackLayout VerticalOptions="StartAndExpand">
+                        <Entry Placeholder="Username or email address"
                            TextColor="Gray"
                            PlaceholderColor="LightGray"
                            ReturnType="Next" 
                            Margin="0,30,0,0"
                            Completed="FocusPassword"
-                           FontAttributes="Bold"/>  
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions >
-                        <Entry IsPassword="True" 
+                           FontAttributes="Bold"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions >
+                            <Entry IsPassword="True" 
                                x:Name="Password" 
                                TextColor="Gray" 
                                Placeholder="Password" 
@@ -86,7 +89,7 @@
                                Grid.Column="0" 
                                Grid.ColumnSpan="2"
                                FontAttributes="Bold"/>
-                        <Label x:Name="Visibility"
+                            <Label x:Name="Visibility"
                                Text="{x:Static utils:Icon.Visible}" 
                                FontFamily="{StaticResource FontAwesomeSolid}" 
                                HorizontalOptions="End" 
@@ -95,12 +98,12 @@
                                TextColor="LightGray"
                                Margin="0,0,5,0"
                                Grid.Column="1" >
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ShowPassword"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </Grid>
-                    <Label 
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ShowPassword"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                        <Label 
                             FontFamily="{StaticResource FontAwesomeRegular}" 
                             Text="{x:Static utils:Icon.LifeRing}"
                             HorizontalOptions="End"
@@ -108,33 +111,35 @@
                             TextColor="LightGray"
                             Margin="0,0,5,0"
                             />
-                    <Frame HasShadow="True"
+                        <Frame HasShadow="True"
                            Margin="0,30,0,0"
                            Padding="10"
                            HorizontalOptions="FillAndExpand"
                            CornerRadius="20">
-                        <StackLayout Orientation="Horizontal"
+                            <StackLayout Orientation="Horizontal"
                                      HorizontalOptions="FillAndExpand">
-                            <Label FontFamily="{StaticResource FontAwesomeSolid}" 
+                                <Label FontFamily="{StaticResource FontAwesomeSolid}" 
                                    Text="{x:Static utils:Icon.Check}"
                                    HorizontalOptions="EndAndExpand"
                                    VerticalOptions="Center"
                                    FontSize="Medium"
                                    TextColor="#9fa5ce"
                                    />
-                            <Label Text="LOG IN"
+                                <Label Text="LOG IN"
                                    TextColor="#9fa5ce"
                                    BackgroundColor="White"
                                    VerticalOptions="Center"
                                    HorizontalOptions="StartAndExpand"
                                    Font="Bold,20"
                                    />
-                        </StackLayout>
-                    </Frame>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
                     <Label Text="Login with"
                            TextColor="LightGray"
                            HorizontalOptions="Center"
                            VerticalOptions="EndAndExpand"
+                           VerticalTextAlignment="End"
                            Margin="0,40,0,0"
                            Font="Bold"           
                            FontSize="Small"/>
