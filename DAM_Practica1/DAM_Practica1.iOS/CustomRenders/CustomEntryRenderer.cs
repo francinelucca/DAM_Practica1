@@ -36,6 +36,7 @@ namespace DAM_Practica1.iOS.CustomRenders
             };
 
             Control.Layer.AddSublayer(_line);
+            Control.Frame = new CoreGraphics.CGRect(0f, Frame.Height - 10, UIScreen.MainScreen.Bounds.Size.Width - 50, 1f);
         }
     }
 }

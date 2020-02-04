@@ -145,7 +145,7 @@
                     <Label Text="Login with"
                            TextColor="LightGray"
                            HorizontalOptions="Center"
-                           VerticalOptions="EndAndExpand"
+                           VerticalOptions="End"
                            VerticalTextAlignment="End"
                            Margin="0,40,0,0"
                            Font="Bold"           
