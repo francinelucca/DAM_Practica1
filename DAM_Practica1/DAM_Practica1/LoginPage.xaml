@@ -32,8 +32,8 @@
                     </Label>
                 </StackLayout>
                 <StackLayout Margin="5,0"
-                             VerticalOptions="FillAndExpand"
-                             BackgroundColor="White">
+                             BackgroundColor="White"
+                             VerticalOptions="FillAndExpand">
                     <Frame x:Name="FrameExtContainer" 
                            HasShadow="False" 
                            HorizontalOptions="Center"
@@ -68,7 +68,7 @@
                                     />
                         </Frame>
                     </Frame>
-                    <StackLayout VerticalOptions="StartAndExpand">
+                    <StackLayout VerticalOptions="Start">
                         <Entry Placeholder="Username or email address"
                            TextColor="Gray"
                            PlaceholderColor="LightGray"
@@ -144,9 +144,8 @@
                     </StackLayout>
                     <Label Text="Login with"
                            TextColor="LightGray"
+                           VerticalOptions="EndAndExpand"
                            HorizontalOptions="Center"
-                           VerticalOptions="End"
-                           VerticalTextAlignment="End"
                            Margin="0,40,0,0"
                            Font="Bold"           
                            FontSize="Small"/>
@@ -158,18 +157,32 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions >
+                        <Grid.RowDefinitions>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnPlatform x:TypeArguments="GridLength" 
+                                            Android="Auto"
+                                            iOS="100"
+                                            />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
                         <ImageButton Source="googlePlus.png" 
                               Grid.Column="0"
-                              BackgroundColor="Transparent"/>
+                              Grid.Row="0"
+                              VerticalOptions="End"/>
                         <ImageButton Source="github.png" 
                               Grid.Column="1"
-                              BackgroundColor="Transparent"/>
+                              Grid.Row="0"
+                              VerticalOptions="End"/>
                         <ImageButton Source="twitter.png" 
                               Grid.Column="2"
-                              BackgroundColor="Transparent"/>
+                              Grid.Row="0"
+                              VerticalOptions="End"/>
                         <ImageButton Source="facebook.png" 
                               Grid.Column="3"
-                              BackgroundColor="Transparent"/>
+                              Grid.Row="0"
+                              VerticalOptions="End"/>
                     </Grid>
                 </StackLayout>
             </StackLayout>

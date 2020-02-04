@@ -30,13 +30,12 @@ namespace DAM_Practica1.iOS.CustomRenders
 
             _line = new CALayer
             {
-                BorderColor = UIColor.FromRGB(83, 83, 83).CGColor,
-                BackgroundColor = UIColor.FromRGB(83, 83, 83).CGColor,
-                Frame = new CGRect(0, Frame.Height / 2, Frame.Width * 2, 1f)
+                BorderColor = UIColor.FromRGB(244, 244, 244).CGColor,
+                BackgroundColor = UIColor.FromRGB(244, 244, 244).CGColor,
+                Frame = new CGRect(0, Frame.Height / 2, Frame.Width + 40, 1f)
             };
 
             Control.Layer.AddSublayer(_line);
-            Control.Frame = new CoreGraphics.CGRect(0f, Frame.Height - 10, UIScreen.MainScreen.Bounds.Size.Width - 50, 1f);
         }
     }
 }

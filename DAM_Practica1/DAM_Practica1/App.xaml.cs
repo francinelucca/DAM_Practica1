@@ -12,6 +12,8 @@ namespace DAM_Practica1
             InitializeComponent();
 
             MainPage = new NavigationPage(new LoginPage());
+            //MainPage = new LoginPage();
+            //MainPage = new SignUpPage();
         }
 
         protected override void OnStart()

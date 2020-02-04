@@ -160,7 +160,7 @@
                             </Label>
                         </Grid>
                         <Frame HasShadow="True"
-                           Margin="0,30,0,0"
+                           Margin="0,40,0,0"
                            Padding="10"
                            HorizontalOptions="FillAndExpand"
                            CornerRadius="20">

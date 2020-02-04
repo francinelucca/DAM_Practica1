@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
@@ -96,7 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAM_Practica1\DAM_Practica1.csproj">
-      <Project>{4AA8B68A-670B-4B00-ACEE-92C830199F14}</Project>
+      <Project>{6B237C47-6553-4263-AE19-7A0C9046A16D}</Project>
       <Name>DAM_Practica1</Name>
     </ProjectReference>
   </ItemGroup>
