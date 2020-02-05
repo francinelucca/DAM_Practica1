@@ -170,19 +170,23 @@
                         <ImageButton Source="googlePlus.png" 
                               Grid.Column="0"
                               Grid.Row="0"
-                              VerticalOptions="End"/>
+                              VerticalOptions="End"
+                              BackgroundColor="Transparent"/>
                         <ImageButton Source="github.png" 
                               Grid.Column="1"
                               Grid.Row="0"
-                              VerticalOptions="End"/>
+                              VerticalOptions="End"
+                              BackgroundColor="Transparent"/>
                         <ImageButton Source="twitter.png" 
                               Grid.Column="2"
                               Grid.Row="0"
-                              VerticalOptions="End"/>
+                              VerticalOptions="End"
+                              BackgroundColor="Transparent"/>
                         <ImageButton Source="facebook.png" 
                               Grid.Column="3"
                               Grid.Row="0"
-                              VerticalOptions="End"/>
+                              VerticalOptions="End"
+                              BackgroundColor="Transparent"/>
                     </Grid>
                 </StackLayout>
             </StackLayout>
