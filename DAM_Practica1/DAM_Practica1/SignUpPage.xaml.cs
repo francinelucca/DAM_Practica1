@@ -20,14 +20,14 @@ namespace DAM_Practica1
 
         public void ShowPassword(object sender, EventArgs args)
         {
-            Password.IsPassword = Password.IsPassword ? false : true;
+            Password.IsPassword = !Password.IsPassword;
             PasswordVisibility.Text = Password.IsPassword ? Utils.Icon.Visible : Utils.Icon.Invisible;
             Password.FontAttributes = FontAttributes.Bold;
         }
 
         public void ShowPasswordRepeat(object sender, EventArgs args)
         {
-            PasswordRepeat.IsPassword = PasswordRepeat.IsPassword ? false : true;
+            PasswordRepeat.IsPassword = !PasswordRepeat.IsPassword;
             PasswordRepeatVisibility.Text = PasswordRepeat.IsPassword ? Utils.Icon.Visible : Utils.Icon.Invisible;
             PasswordRepeat.FontAttributes = FontAttributes.Bold;
         }
@@ -48,7 +48,7 @@ namespace DAM_Practica1
         }
 
 
-        private async void goToLogin(object sender, EventArgs e)
+        private async void GoToLogin(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }

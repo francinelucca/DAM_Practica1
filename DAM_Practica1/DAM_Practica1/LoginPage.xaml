@@ -8,33 +8,54 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="20,35,20,20"
-                         BackgroundColor="White">    
-                <!-- Place new controls here -->
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="FillAndExpand"
-                             BackgroundColor="White">
-                    <Label Text="Login"
+            <!-- Place new controls here -->
+            <Grid    Padding="20,35,20,20"
+                         BackgroundColor="White"
+                         VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition>
+                        <RowDefinition.Height>
+                            <OnPlatform x:TypeArguments="GridLength" 
+                                            Android="Auto"
+                                            iOS="100"
+                                            />
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions >
+                <Label Text="Login"
                            TextColor="Black"
                            Font="Bold,28"
                            HorizontalOptions="StartAndExpand"
+                           Grid.Column="0"
+                           Grid.Row="0"
                            />
-                    <Label Text="Sign Up"
+                <Label Text="Sign Up"
                            TextColor="LightGray"
                            Font="Bold,20"
                            HorizontalOptions="EndAndExpand"
                            VerticalTextAlignment="End"
                            VerticalOptions="End"
-                           >    
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="goToSignUp"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-                </StackLayout>
-                <StackLayout Margin="5,0"
-                             BackgroundColor="White"
-                             VerticalOptions="FillAndExpand">
-                    <Frame x:Name="FrameExtContainer" 
+                           Grid.Column="3"
+                           Grid.Row="0"
+                           >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToSignUp"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Frame x:Name="FrameExtContainer" 
                            HasShadow="False" 
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
@@ -42,10 +63,13 @@
                            WidthRequest="90"
                            CornerRadius="45"
                            Margin="0,50,0,0"
-                           Padding="0"
                            OutlineColor="LightGray" 
-                           BackgroundColor="LightGray" >
-                        <Frame HasShadow="False" 
+                           BackgroundColor="LightGray"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"
+                           Padding="0">
+                    <Frame HasShadow="False" 
                                WidthRequest="76" 
                                HeightRequest="76" 
                                CornerRadius="38" 
@@ -56,7 +80,7 @@
                                Margin="0"
                                Padding="0"
                            >
-                            <Label 
+                        <Label 
                                     FontFamily="{StaticResource FontAwesomeSolid}" 
                                     Text="{x:Static utils:Icon.User}"
                                     VerticalOptions="Center"
@@ -66,130 +90,118 @@
                                     FontSize="50"
                                     TextColor="LightGray"
                                     />
-                        </Frame>
                     </Frame>
-                    <StackLayout VerticalOptions="Start">
-                        <Entry Placeholder="Username or email address"
+                </Frame>
+                <Entry Placeholder="Username or email address"
                            TextColor="Gray"
                            PlaceholderColor="LightGray"
                            ReturnType="Next" 
-                           Margin="0,30,0,0"
                            Completed="FocusPassword"
-                           FontAttributes="Bold"/>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions >
-                            <Entry IsPassword="True" 
+                           FontAttributes="Bold"
+                           Grid.Row="2"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"
+                           Margin="5,30,5,0"/>
+                <Entry IsPassword="True" 
                                x:Name="Password" 
                                TextColor="Gray" 
                                Placeholder="Password" 
                                PlaceholderColor="LightGray"
+                               Grid.Row="3"
                                Grid.Column="0" 
-                               Grid.ColumnSpan="2"
+                               Grid.ColumnSpan="4"
                                FontAttributes="Bold">
-                                <Entry.Margin >
-                                    <OnPlatform x:TypeArguments="Thickness" 
-                                            Android="0,0,0,0"
-                                            iOS="0,20,0,0"
+                    <Entry.Margin >
+                        <OnPlatform x:TypeArguments="Thickness" 
+                                            Android="5,0,5,0"
+                                            iOS="5,20,5,0"
                                             />
-                                </Entry.Margin>
-                            </Entry>
-                            <Label x:Name="Visibility"
+                    </Entry.Margin>
+                </Entry>
+                <Label x:Name="Visibility"
                                Text="{x:Static utils:Icon.Visible}" 
                                FontFamily="{StaticResource FontAwesomeSolid}" 
                                HorizontalOptions="End" 
                                VerticalOptions="Center" 
                                FontSize="Medium"
                                TextColor="LightGray"
-                               Margin="0,0,5,0"
-                               Grid.Column="1" >
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="ShowPassword"/>
-                                </Label.GestureRecognizers>
-                            </Label>
-                        </Grid>
-                        <Label 
+                               Margin="5,0,10,0"
+                               Grid.Column="3"
+                               Grid.Row="3" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ShowPassword"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label 
                             FontFamily="{StaticResource FontAwesomeRegular}" 
                             Text="{x:Static utils:Icon.LifeRing}"
                             HorizontalOptions="End"
                             FontSize="Medium"
                             TextColor="LightGray"
-                            Margin="0,0,5,0"
+                            Margin="5,0,10,0"
+                            Grid.Column="0"
+                            Grid.Row="4"
+                            Grid.ColumnSpan="4"
                             />
-                        <Frame HasShadow="True"
-                           Margin="0,30,0,0"
+                <Frame HasShadow="True"
+                           Margin="5,30,5,0"
                            Padding="10"
                            HorizontalOptions="FillAndExpand"
-                           CornerRadius="20">
-                            <StackLayout Orientation="Horizontal"
+                           CornerRadius="20"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Grid.ColumnSpan="4">
+                    <StackLayout Orientation="Horizontal"
                                      HorizontalOptions="FillAndExpand">
-                                <Label FontFamily="{StaticResource FontAwesomeSolid}" 
+                        <Label FontFamily="{StaticResource FontAwesomeSolid}" 
                                    Text="{x:Static utils:Icon.Check}"
                                    HorizontalOptions="EndAndExpand"
                                    VerticalOptions="Center"
                                    FontSize="Medium"
                                    TextColor="#9fa5ce"
                                    />
-                                <Label Text="LOG IN"
+                        <Label Text="LOG IN"
                                    TextColor="#9fa5ce"
                                    BackgroundColor="White"
                                    VerticalOptions="Center"
                                    HorizontalOptions="StartAndExpand"
                                    Font="Bold,20"
                                    />
-                            </StackLayout>
-                        </Frame>
                     </StackLayout>
-                    <Label Text="Login with"
+                </Frame>
+                <Label Text="Login with"
                            TextColor="LightGray"
                            VerticalOptions="EndAndExpand"
                            HorizontalOptions="Center"
-                           Margin="0,40,0,0"
+                           Margin="5,40,5,0"
                            Font="Bold"           
-                           FontSize="Small"/>
-                    <Grid Margin="0,10,0,0"
-                          VerticalOptions="End">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions >
-                        <Grid.RowDefinitions>
-                            <RowDefinition>
-                                <RowDefinition.Height>
-                                    <OnPlatform x:TypeArguments="GridLength" 
-                                            Android="Auto"
-                                            iOS="100"
-                                            />
-                                </RowDefinition.Height>
-                            </RowDefinition>
-                        </Grid.RowDefinitions>
-                        <ImageButton Source="googlePlus.png" 
+                           FontSize="Small"
+                           Grid.Row="6"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="4"/>
+                <ImageButton Source="googlePlus.png" 
                               Grid.Column="0"
-                              Grid.Row="0"
+                              Grid.Row="7"
                               VerticalOptions="End"
-                              BackgroundColor="Transparent"/>
-                        <ImageButton Source="github.png" 
+                              BackgroundColor="Transparent"
+                              Margin="5,10,0,0"/>
+                <ImageButton Source="github.png" 
                               Grid.Column="1"
-                              Grid.Row="0"
+                              Grid.Row="7"
                               VerticalOptions="End"
                               BackgroundColor="Transparent"/>
-                        <ImageButton Source="twitter.png" 
+                <ImageButton Source="twitter.png" 
                               Grid.Column="2"
-                              Grid.Row="0"
+                              Grid.Row="7"
                               VerticalOptions="End"
                               BackgroundColor="Transparent"/>
-                        <ImageButton Source="facebook.png" 
+                <ImageButton Source="facebook.png" 
                               Grid.Column="3"
-                              Grid.Row="0"
+                              Grid.Row="7"
                               VerticalOptions="End"
-                              BackgroundColor="Transparent"/>
-                    </Grid>
-                </StackLayout>
-            </StackLayout>
+                              BackgroundColor="Transparent"
+                              Margin="0,0,5,0"/>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

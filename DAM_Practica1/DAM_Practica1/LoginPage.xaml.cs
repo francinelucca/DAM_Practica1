@@ -20,7 +20,7 @@ namespace DAM_Practica1
 
         public void ShowPassword(object sender, EventArgs args)
         {
-            Password.IsPassword = Password.IsPassword ? false : true;
+            Password.IsPassword = !Password.IsPassword;
             Visibility.Text = Password.IsPassword ? Utils.Icon.Visible : Utils.Icon.Invisible;
             Password.FontAttributes = FontAttributes.Bold;
         }
@@ -31,7 +31,7 @@ namespace DAM_Practica1
         }
 
 
-        private async void goToSignUp(object sender, EventArgs e)
+        private async void GoToSignUp(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SignUpPage());
         }
