@@ -183,22 +183,26 @@
                               Grid.Column="0"
                               Grid.Row="7"
                               VerticalOptions="End"
+                              HorizontalOptions="Center"
                               BackgroundColor="Transparent"
                               Margin="5,10,0,0"/>
                 <ImageButton Source="github.png" 
                               Grid.Column="1"
                               Grid.Row="7"
                               VerticalOptions="End"
+                              HorizontalOptions="Center"
                               BackgroundColor="Transparent"/>
                 <ImageButton Source="twitter.png" 
                               Grid.Column="2"
                               Grid.Row="7"
                               VerticalOptions="End"
+                              HorizontalOptions="Center"
                               BackgroundColor="Transparent"/>
                 <ImageButton Source="facebook.png" 
                               Grid.Column="3"
                               Grid.Row="7"
                               VerticalOptions="End"
+                              HorizontalOptions="Center"
                               BackgroundColor="Transparent"
                               Margin="0,0,5,0"/>
             </Grid>
