@@ -24,7 +24,7 @@
                         <RowDefinition.Height>
                             <OnPlatform x:TypeArguments="GridLength" 
                                             Android="Auto"
-                                            iOS="100"
+                                            iOS="50"
                                             />
                         </RowDefinition.Height>
                     </RowDefinition>

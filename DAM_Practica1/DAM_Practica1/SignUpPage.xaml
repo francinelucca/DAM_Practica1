@@ -9,7 +9,7 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
-            <!-- Place new controls here -->\
+            <!-- Place new controls here -->
             <Grid Padding="20,35,20,20"
                       VerticalOptions="FillAndExpand"
                       BackgroundColor="White">
